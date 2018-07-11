@@ -1,17 +1,17 @@
-## 创建项目
+### 创建项目
 
 ```sh
 $ npm install -g create-react-app yarn
 $ create-react-app space-admin
 ```
 
-## 安装 antd
+### 安装 antd
 
 ```sh
 $ yarn add antd
 ```
 
-如何使用：
+### 如何使用 antd
 
 ```js
 import {Button} from 'antd'
@@ -80,7 +80,7 @@ $ yarn add react-app-rewire-less --dev
   };
 ```
 
-## 路由
+### 路由
 
 ```js
 $ react-router-dom axios
