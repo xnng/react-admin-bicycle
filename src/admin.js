@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import NavLeft from './components/NvaLeft'
 import { Row, Col } from 'antd';
 
 export default class Admin extends React.Component {
@@ -8,7 +9,9 @@ export default class Admin extends React.Component {
         return(
             <div>
                 <Row>
-                    <Col span='3'>left</Col>
+                    <Col span='3'>
+                        <NavLeft/>
+                    </Col>
                     <Col span='21'>
                         <Header>header</Header>
                         <Row>content</Row>
