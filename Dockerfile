@@ -9,7 +9,7 @@ RUN npm install -g cnpm --registry=https://registry.npm.taobao.org \
     && npm run build \
     && cnpm install -g serve
 
-WORKDIR /app/dist
+WORKDIR /app/build
 
 EXPOSE 5000
 
