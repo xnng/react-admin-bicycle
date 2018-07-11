@@ -1,5 +1,7 @@
 import React from 'react'
 import Child from './Child'
+import {Button} from 'antd'
+import 'antd/dist/antd.css'
 
 export default class Life extends React.Component {
     constructor(props) {
@@ -26,7 +28,7 @@ export default class Life extends React.Component {
         return (
             <div style={{ padding: 50 }}>
                 <p>react lifestyle</p>
-                <button onClick={this.handleAdd}>点击一下</button>
+                <Button type="primary" onClick={this.handleAdd}>点击一下</Button>
                 <button onClick={this.handleClick.bind(this)}>点击一下</button>
                 <p>{this.state.count}</p>
                 <Child name={this.state.count} />
