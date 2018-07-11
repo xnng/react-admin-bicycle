@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuConfig from '../../config/menueConfig'
 import { Menu, Icon } from 'antd';
-import './index.css'
+import './index.less'
 
 const SubMenu = Menu.SubMenu;
 
@@ -17,12 +17,12 @@ export default class NvaLeft extends React.Component {
         return data.map((item) => {
             if (item.children) {
                 return (
-                    <SubMenu title={item.title} key={item.key}>
+                    <SubMenu title={<span><Icon type={item.icon} />{item.title}</span>} key={item.key}>
                         {this.renderMenu(item.children)}
                     </SubMenu>
                 )
             }
-            return <Menu.Item key={item.key}>{item.title}</Menu.Item>
+            return <Menu.Item key={item.key}><Icon type={item.icon} />{item.title}</Menu.Item>
         })
     }
 
@@ -33,7 +33,7 @@ export default class NvaLeft extends React.Component {
                     <img src="./assets/logo-ant.svg" alt="" />
                     <h1>Space MS</h1>
                 </div>
-                <Menu theme="dark" mode="vertical">
+                <Menu theme="dark" mode="inline">
                     {this.state.MenuTreeNode}
                 </Menu>
             </div>
