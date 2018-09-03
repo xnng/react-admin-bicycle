@@ -13,9 +13,8 @@ export class admin extends Component {
             <NvaLeft />
           </Col>
           <Col span="21">
-            <Header>header</Header>
-            <Row>content</Row>
-            <Footer>footer</Footer>
+            <Header />
+            <Footer />
           </Col>
         </Row>
       </div>
