@@ -1,25 +1,26 @@
-import React from 'react';
-import Header from './components/Header'
-import Footer from './components/Footer'
-import NavLeft from './components/NvaLeft'
-import { Row, Col } from 'antd';
-import './style/common.less'
+import React, { Component } from "react";
+import { Row, Col } from "antd";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import NvaLeft from "./components/NvaLeft";
 
-export default class Admin extends React.Component {
-    render(){
-        return(
-            <div>
-                <Row className="container">
-                    <Col span='3' className="nav-left">
-                        <NavLeft/>
-                    </Col>
-                    <Col span='21' className="main">
-                        <Header>header</Header>
-                        <Row className="content">content</Row>
-                        <Footer>footer</Footer>
-                    </Col>
-                </Row>
-            </div>
-        )
-    }
+export class admin extends Component {
+  render() {
+    return (
+      <div>
+        <Row>
+          <Col span="3">
+            <NvaLeft />
+          </Col>
+          <Col span="21">
+            <Header>header</Header>
+            <Row>content</Row>
+            <Footer>footer</Footer>
+          </Col>
+        </Row>
+      </div>
+    );
+  }
 }
+
+export default admin;
