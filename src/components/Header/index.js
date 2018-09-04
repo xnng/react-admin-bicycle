@@ -27,7 +27,7 @@ export class Header extends Component {
   }
 
   getWeatherAPIData() {
-    let city = "北京";
+    let city = "西安";
     getWeather({
       url:
         "http://api.map.baidu.com/telematics/v3/weather?location=" +

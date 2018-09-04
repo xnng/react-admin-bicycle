@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NvaLeft from "./components/NvaLeft";
+import Home from "./pages/home";
 
 export class admin extends Component {
   render() {
@@ -12,8 +13,11 @@ export class admin extends Component {
           <Col span="3">
             <NvaLeft />
           </Col>
-          <Col span="21">
+          <Col span="21" style={{backgroundColor: '#f1f3f5'}}>
             <Header />
+            <Row>
+              <Home />
+            </Row>
             <Footer />
           </Col>
         </Row>
