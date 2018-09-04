@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
-import App from "./App";
 import Login from "../pages/login";
-import Admin from '../admin'
+import Admin from "../admin";
+import Home from "../pages/home";
+import Buttons from "../pages/ui/Buttons";
+import NoMatch from "../pages/NoMatch";
 
 export class Routers extends Component {
   render() {
     return (
       <Router>
-        <App>
+        <div>
           <Route path="/login" component={Login} />
-          <Route exact path="/" component={Admin} />
-          {/* <Route path="/" component="" /> */}
-        </App>
+          <Route
+            path="/"
+            render={() => (
+              <Admin>
+                <Route path="/ui/buttons" component={Buttons} />
+                <Route path="/home" component={Home} />
+                <Route component={NoMatch} />
+              </Admin>
+            )}
+          />
+        </div>
       </Router>
     );
   }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class App extends Component {
+export class Buttons extends Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        fdfdsfsdfdsfsfdsf
       </div>
     )
   }
 }
 
-export default App
+export default Buttons
