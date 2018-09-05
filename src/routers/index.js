@@ -5,6 +5,7 @@ import Admin from "../admin";
 import Home from "../pages/home";
 import Buttons from "../pages/ui/Buttons";
 import NoMatch from "../pages/NoMatch";
+import FormLogin from '../pages/form/login';
 
 export class Routers extends Component {
   render() {
@@ -18,7 +19,8 @@ export class Routers extends Component {
               <Admin>
                 <Route path="/ui/buttons" component={Buttons} />
                 <Route path="/home" component={Home} />
-                <Route component={NoMatch} />
+                <Route path="/form/login" component={FormLogin} />
+                {/* <Route component={NoMatch} /> */}
               </Admin>
             )}
           />

@@ -14,7 +14,7 @@ export class admin extends Component {
           </Col>
           <Col span="21" style={{ backgroundColor: "#f1f3f5" }}>
             <Header />
-            <Row>{this.props.children}</Row>
+            <Row style={{padding: 40}}>{this.props.children}</Row>
             <Footer />
           </Col>
         </Row>
