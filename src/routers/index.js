@@ -3,8 +3,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import Login from "../pages/login";
 import Admin from "../admin";
 import Home from "../pages/home";
-import Buttons from "../pages/ui/Buttons";
-import NoMatch from "../pages/NoMatch";
+import Buttons from "../pages/ui/buttons";
 import FormLogin from '../pages/form/login';
 
 export class Routers extends Component {

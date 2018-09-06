@@ -3,7 +3,6 @@ import { Card, Form, Input, Button, message, Icon, Checkbox } from "antd";
 
 export class FormLogin extends Component {
   handleSubmit = () => {
-    let userInfo = this.props.form.getFieldsValue();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         message.success(
@@ -83,7 +82,7 @@ export class FormLogin extends Component {
                   }
                 ]
               })(<Checkbox>记住密码</Checkbox>)}
-              <a style={{float: "right"}} href="#">忘记密码</a>
+              <a style={{float: "right"}}>忘记密码</a>
             </Form.Item>
             <Form.Item>
               <Button onClick={this.handleSubmit} type="primary">
