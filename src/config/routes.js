@@ -8,6 +8,7 @@ import Modals from "../pages/ui/modals";
 import Loadings from "../pages/ui/loading";
 import Notifications from "../pages/ui/notifications";
 import Messages from '../pages/ui/messages';
+import Tabs from '../pages/ui/tabs';
 
 export class Routes extends Component {
   render() {
@@ -22,6 +23,7 @@ export class Routes extends Component {
             <Route path="/ui/loadings" component={Loadings} />
             <Route path="/ui/notification" component={Notifications} />
             <Route path="/ui/messages" component={Messages} />
+            <Route path="/ui/tabs" component={Tabs} />
             <Route component={NoMatch} />
           </Switch>
         </Admin>
