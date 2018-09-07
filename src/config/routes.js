@@ -5,6 +5,7 @@ import Admin from "../layouts/admin";
 import Buttons from "../pages/ui/buttons";
 import NoMatch from "../pages/noMatch";
 import Modals from '../pages/ui/modals';
+import Loadings from '../pages/ui/loading';
 
 export class Routes extends Component {
   render() {
@@ -16,6 +17,7 @@ export class Routes extends Component {
             <Route path="/home" component={Home} />
             <Route path="/ui/buttons" component={Buttons} />
             <Route path="/ui/modals" component={Modals} />
+            <Route path="/ui/loadings" component={Loadings} />
             <Route component={NoMatch} />
           </Switch>
         </Admin>
