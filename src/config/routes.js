@@ -7,6 +7,7 @@ import NoMatch from "../pages/noMatch";
 import Modals from "../pages/ui/modals";
 import Loadings from "../pages/ui/loading";
 import Notifications from "../pages/ui/notifications";
+import Messages from '../pages/ui/messages';
 
 export class Routes extends Component {
   render() {
@@ -20,6 +21,7 @@ export class Routes extends Component {
             <Route path="/ui/modals" component={Modals} />
             <Route path="/ui/loadings" component={Loadings} />
             <Route path="/ui/notification" component={Notifications} />
+            <Route path="/ui/messages" component={Messages} />
             <Route component={NoMatch} />
           </Switch>
         </Admin>
