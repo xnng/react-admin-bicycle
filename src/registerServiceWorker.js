@@ -77,7 +77,7 @@ function registerValidSW(swUrl) {
       };
     })
     .catch(error => {
-      console.error('发现没有启用 https:', error);
+      console.error('Error during service worker registration:', error);
     });
 }
 
