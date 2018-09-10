@@ -1,7 +1,7 @@
 const menuList = [
   {
     name: "首页",
-    route: "/home",
+    route: "/",
     icon: "home"
   },
   {
@@ -32,14 +32,6 @@ const menuList = [
       {
         name: "Tab页签",
         route: "/ui/tabs"
-      },
-      {
-        name: "图片画廊",
-        route: "/ui/gallery"
-      },
-      {
-        name: "轮播图",
-        route: "/ui/carousel"
       }
     ]
   },
