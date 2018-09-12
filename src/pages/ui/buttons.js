@@ -18,7 +18,7 @@ export class Buttons extends Component {
     });
   };
 
-  handleChangeSize = (e) => {
+  handleChangeSize = e => {
     this.setState({
       size: e.target.value
     });

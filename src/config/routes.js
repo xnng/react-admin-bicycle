@@ -11,6 +11,7 @@ import Messages from '../pages/ui/messages';
 import Tabs from '../pages/ui/tabs';
 import FormLogin from '../pages/form/login';
 import FormReg from '../pages/form/register';
+import BasicTable from '../pages/table/basicTable'
 
 export class Routes extends Component {
   render() {
@@ -28,6 +29,7 @@ export class Routes extends Component {
             <Route path="/ui/tabs" component={Tabs} />
             <Route path="/form/login" component={FormLogin} />
             <Route path="/form/reg" component={FormReg} />
+            <Route path="/table" component={BasicTable} />
             <Route component={NoMatch} />
           </Switch>
         </Admin>
