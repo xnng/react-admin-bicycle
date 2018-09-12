@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { Card, Table } from "antd";
+import axios from "axios";
+import API from "../../utils/APIUrl";
 
 export class BasicTable extends Component {
-  state = {};
+  state = {
+    dataSource2: []
+  };
 
   componentDidMount = () => {
     const dataSource = [
       {
-        id: "0",
+        key: "0",
         userName: "jack",
         sex: "1",
         state: "1",
@@ -17,7 +21,7 @@ export class BasicTable extends Component {
         time: "09:00"
       },
       {
-        id: "1",
+        key: "1",
         userName: "tom",
         sex: "1",
         state: "1",
@@ -27,7 +31,7 @@ export class BasicTable extends Component {
         time: "09:00"
       },
       {
-        id: "2",
+        key: "2",
         userName: "lisa",
         sex: "1",
         state: "1",
@@ -37,8 +41,19 @@ export class BasicTable extends Component {
         time: "09:00"
       }
     ];
+
     this.setState({
       dataSource
+    });
+
+    this.fetch_tableData();
+  };
+
+  fetch_tableData = () => {
+    axios.get(`${API}/table/list`).then(res => {
+      this.setState({
+        dataSource2: res.data.result
+      });
     });
   };
 
@@ -46,19 +61,23 @@ export class BasicTable extends Component {
     const columns = [
       {
         title: "id",
-        dataIndex: "id"
+        dataIndex: "key",
+        key: "key"
       },
       {
         title: "用户名",
-        dataIndex: "userName"
+        dataIndex: "userName",
+        key: "userName"
       },
       {
         title: "性别",
-        dataIndex: "sex"
+        dataIndex: "sex",
+        key: "sex"
       },
       {
         title: "状态",
-        dataIndex: "state"
+        dataIndex: "state",
+        key: "state"
       },
       {
         title: "爱好",
@@ -66,15 +85,18 @@ export class BasicTable extends Component {
       },
       {
         title: "生日",
-        dataIndex: "birthday"
+        dataIndex: "birthday",
+        key: "birthday"
       },
       {
         title: "地址",
-        dataIndex: "address"
+        dataIndex: "address",
+        key: "address"
       },
       {
         title: "早起时间",
-        dataIndex: "time"
+        dataIndex: "time",
+        key: "time"
       }
     ];
 
@@ -86,6 +108,14 @@ export class BasicTable extends Component {
             pagination={false}
             columns={columns}
             dataSource={this.state.dataSource}
+          />
+        </Card>
+        <Card title="动态数据渲染表格" style={{ marginTop: 20 }}>
+          <Table
+            bordered
+            pagination={false}
+            columns={columns}
+            dataSource={this.state.dataSource2}
           />
         </Card>
       </div>
