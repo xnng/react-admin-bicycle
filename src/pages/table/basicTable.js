@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Card, Table } from "antd";
+import { Card, Table, Spin } from "antd";
 import axios from "axios";
 import API from "../../utils/APIUrl";
 
 export class BasicTable extends Component {
   state = {
-    dataSource2: []
+    dataSource2: [],
+    loading: true
   };
 
   componentDidMount = () => {
@@ -50,11 +51,16 @@ export class BasicTable extends Component {
   };
 
   fetch_tableData = () => {
-    axios.get(`${API}/table/list`).then(res => {
-      this.setState({
-        dataSource2: res.data.result
-      });
-    });
+    axios
+      .get(`${API}/table/list`)
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({
+            dataSource2: res.data.result,
+            loading: false
+          });
+        }
+      })
   };
 
   render() {
@@ -72,16 +78,37 @@ export class BasicTable extends Component {
       {
         title: "性别",
         dataIndex: "sex",
+        render(sex) {
+          return sex === 1 ? "男" : "女";
+        },
         key: "sex"
       },
       {
         title: "状态",
         dataIndex: "state",
+        render(state) {
+          let config = {
+            "1": "咸鱼一条",
+            "2": "风华浪子",
+            "3": "北大才子",
+            "4": "阿里 FE"
+          };
+          return config[state];
+        },
         key: "state"
       },
       {
         title: "爱好",
-        dataIndex: "hobby"
+        dataIndex: "hobby",
+        render(hobby) {
+          let config = {
+            "1": "游泳",
+            "2": "打篮球",
+            "3": "踢足球",
+            "4": "跑步"
+          };
+          return config[hobby];
+        }
       },
       {
         title: "生日",
@@ -111,12 +138,13 @@ export class BasicTable extends Component {
           />
         </Card>
         <Card title="动态数据渲染表格" style={{ marginTop: 20 }}>
-          <Table
-            bordered
-            pagination={false}
-            columns={columns}
-            dataSource={this.state.dataSource2}
-          />
+          <Spin tip="Loading..." spinning={this.state.loading}>
+            <Table
+              bordered
+              columns={columns}
+              dataSource={this.state.dataSource2}
+            />
+          </Spin>
         </Card>
       </div>
     );
